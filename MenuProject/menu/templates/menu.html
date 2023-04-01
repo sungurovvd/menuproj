@@ -1,0 +1,19 @@
+
+<ul id="navbar">
+  {% for par in parents %}
+    <li><a href='{{ par.url }}'>prnt {{par.text}}</a></li>
+  {% endfor %}
+    <ul>
+        <li><a href='{{ current.url }}'>cur {{current.text}}</a></li>
+        <ul>
+            {% for child in children %}
+                <li><a href='{{ child.url }}'>child {{child.text}}</a></li>
+            {% endfor %}
+        </ul>
+        {% for s in same %}
+            <li><a href='{{ s.url }}'>same {{s.text}}</a></li>
+        {% endfor %}
+    </ul>
+  </li>
+</ul>
+
